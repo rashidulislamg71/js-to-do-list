@@ -117,4 +117,9 @@ input[type="checkbox"]{
 }
 
 
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+
 

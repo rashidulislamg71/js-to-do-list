@@ -2,8 +2,7 @@ let new_task = document.querySelector("#new-task");
 let form = document.querySelector("form");
 let addTaskBtn = document.querySelector("#addTaskBtn");
 let toDoUl = document.querySelector("#items");
-let completeUl = document.querySelector(".conplete-list ul");
-let deleteBtn = document.querySelector(".deleteBtn");
+let completeUl = document.querySelector("#CompletedUl");
 
 // // function
 const createElement = (task) => {
@@ -34,6 +33,8 @@ const createElement = (task) => {
   deleteBtn.addEventListener("click", deleteTask);
   updateBtn.addEventListener("click", updateTask);
 
+  checkBox.addEventListener("change", compliteTask);
+
   return listItme;
 };
 
@@ -47,37 +48,18 @@ const addTask = (e) => {
   }
 };
 
+// Delete Task
 const deleteTask = (e) => {
   let listItem = e.target.parentElement;
-  toDoUl.removeChild(listItem);
+  if (listItem.parentElement === toDoUl) {
+    toDoUl.removeChild(listItem);
+  } else if (listItem.parentElement === completeUl) {
+    completeUl.removeChild(listItem);
+  }
 };
 
-// const updateTask = (e) => {
-//     let listItem = e.target.parentElement;
-//     let label = listItem.querySelector("label");
-//     let currentTask = label.innerText;
 
-//     let inputField = document.createElement("input");
-//     inputField.type = "text";
-//     inputField.value = currentTask;
-
-//     let saveBtn = document.createElement("button");
-//     saveBtn.innerText = "Save";
-//     saveBtn.setAttribute("class", "saveBtn");
-
-//     listItem.replaceChild(inputField, label);
-//     listItem.replaceChild(saveBtn, e.target);
-
-//     saveBtn.addEventListener("click", () => {
-//         let updatedTask = inputField.value;
-//         if (updatedTask.trim() !== "") {
-//             label.innerText = updatedTask;
-//             listItem.replaceChild(label, inputField);
-//             listItem.replaceChild(e.target, saveBtn);
-//         }
-//     });
-// };
-
+// Upadate task
 const updateTask = (e) => {
   let listItem = e.target.parentElement;
   let label = listItem.querySelector("label");
@@ -103,4 +85,15 @@ const updateTask = (e) => {
     }
   });
 };
+
+// Conplite Task
+const compliteTask = (e) => {
+  let listItem = e.target.parentElement.parentElement;
+  if (e.target.checked) {
+    completeUl.appendChild(listItem);
+  } else {
+    toDoUl.appendChild(listItem);
+  }
+};
+
 form.addEventListener("submit", addTask);
