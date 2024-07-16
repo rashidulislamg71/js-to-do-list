@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>To-Do-App-Studens</title>
+  </head>
+  <body>
+    <section id="input-section">
+      <div class="to-do-container">
+        <div class="to-do-inner-content">
+          <div class="input-task">
+            <h2 class="title">To-Do app</h2>
+            <form >
+              <input
+                id="new-task"
+                type="text"
+                placeholder="Type your task"
+                required
+                autofocus
+              />
+            <input type="submit" id="addTaskBtn" value="Add Task">
+            </form>
+          </div>
+
+          <div class="to-do-list-container">
+            <div class="to-do-list box">
+              <h2>Incomplite Tasks</h2>
+              <ul id="items">
+               
+              </ul>
+            </div>
+            <!-- <div class="conplete-list box">
+              <h2>Completed Tasks</h2>
+              <ul>
+                <li class="item">
+                  <input type="checkbox" /> <label> Task name</label>
+                  <button class="deleteBtn">Delete</button>
+                </li>
+                <li class="item">
+                  <input type="checkbox" /> <label> Task name</label>
+                  <button class="deleteBtn">Delete</button>
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---Link of JaveScript file-->
+    <script src="index.js"></script>
+  </body>
+</html>
