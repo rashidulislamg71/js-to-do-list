@@ -21,13 +21,6 @@ JavaScript: Functionality and interactivity of the app.
 ### Clone the repository:
 git clone https://github.com/rashidulislamg71/js-to-do-list.git
 
-### Navigate to the project directory:
-
-cd TO-DO-APP-STUDENTS
-
-Open index.html in your browser:
-
-Simply open index.html in your preferred browser to view and interact with the To-Do App.
 
 ### Usage
 Adding a Task: Type your task in the input field and click "Add Task".
